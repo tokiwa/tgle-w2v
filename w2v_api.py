@@ -3,7 +3,7 @@ import gensim
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
-word2vec_model = gensim.models.KeyedVectors.load_word2vec_format('model/entity_vector.model.bin', binary=True) #東北大
+word2vec_model = gensim.models.KeyedVectors.load_word2vec_format('model/entity_vector.model.bin', binary=True)
 
 @app.route('/similarity')
 def similarity():
@@ -22,7 +22,7 @@ def openai():
     time.sleep(5)
     word1 = request.args.get('word1', '')
     word2 = request.args.get('word2', '')
-    openai.api_key = "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"
+    openai.api_key = ""
 
     resp = openai.Embedding.create( input = [word1, word2], engine = "text-similarity-ada-001")
 
