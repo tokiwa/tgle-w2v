@@ -22,7 +22,7 @@ def openai():
     time.sleep(5)
     word1 = request.args.get('word1', '')
     word2 = request.args.get('word2', '')
-    openai.api_key = ""
+    openai.api_key = ""   # OpenAIアクセスキーを設定する
 
     resp = openai.Embedding.create( input = [word1, word2], engine = "text-similarity-ada-001")
 
